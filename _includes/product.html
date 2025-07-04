@@ -32,7 +32,7 @@
         alt="{{ page.title }}" width="500" height="500">
     {% endif %}
   </div>
-  <h1 class="text-base font-semibold text-gray-800">{{page.title}}</h1>
+  <h1 class="text-base font-semibold">{{page.title}}</h1>
   <div class="flex items-center gap-1">
   <div class="flex items-center gap-1">
     {% assign max_stars = 5 %}
@@ -65,7 +65,7 @@
     <p class="text-xl font-semibold">{% include currency_symbol.html currency=page.currency amount=page.price %}</p>
     <div class="inline-flex items-center gap-2 text-base">
       {% if page.price_original > page.price %}
-        <p class="text-gray-500 line-through">
+        <p class="line-through">
           {% include currency_symbol.html currency=page.currency amount=page.price_original %}
         </p>
         <p class="text-[#f73c22] font-semibold">-{{page.discount}}</p>
@@ -103,9 +103,9 @@
       {% endfor %}
     </div>
   {% endif %}
-  <div class="w-full my-2">
-    {{ content }}
-  </div>
+
+  {{ content }}
+
 </article>
 
 {% assign related_products = site.products | where_exp: "product", "product.slug != page.slug" %}
@@ -135,7 +135,7 @@
     {% for product in related_products %}
       {% if count < display_count %}
         <a href="/{{ product.slug }}" title="{{ product.title }}" class="group rounded-xl shadow-md overflow-hidden border">
-          <img src="https://cdn.csgad.com/kf/{{ product.image }}_200x200.webp" width="200" height="200" alt="{{ product.title }}" class="w-full object-cover object-center group-hover:opacity-75 bg-gray-100" style="color: transparent; display: inline-block;">
+          <img src="https://cdn.csgad.com/kf/{{ product.image }}_200x200.webp" width="200" height="200" alt="{{ product.title }}" class="w-full aspect-square object-cover object-center group-hover:opacity-75 bg-gray-100" style="color: transparent; display: inline-block;">
           <h2 class="mx-2 mt-2 text-xs sm:text-sm text-gray-700 line-clamp-2">{{ product.title }}</h2>
           <p class="mx-2 mt-1 mb-4 text-sm sm:text-base font-medium text-gray-800">
             {% include currency_symbol.html currency=product.currency amount=product.price %}
