@@ -1,4 +1,3 @@
-Penting: Berikan artikel yang engage dan berbobot, tidak dipenuhi kata kunci secara berulang-ulang.
 ---
 title: "Professional 3 Waves Ice Titanium Laser Hair Removal Machine – Smooth Skin at Home"
 price: '294.63'
