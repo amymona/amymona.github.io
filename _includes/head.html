@@ -19,11 +19,11 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{page.title}}">
   <meta name="twitter:description" content="{% if page.title %}{{ description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ translations.description }}{% endif %}">
-  <meta name="twitter:image" content="{{page.image}}">
+  <meta name="twitter:image" content="https://cdn.csgad.com/kf/{{page.image}}">
   <meta property="og:type" content="product">
   <meta property="og:title" content="{{page.title}}">
   <meta property="og:description" content="{% if page.title %}{{ description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ translations.description }}{% endif %}">
-  <meta property="og:image" content="{{page.image}}">
+  <meta property="og:image" content="https://cdn.csgad.com/kf/{{page.image}}">
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
   <meta property="og:site_name" content="{{site.title}}">
   <meta property="product:price:amount" content="{{page.price}}">
@@ -35,7 +35,7 @@
       "@context": "https://schema.org/",
       "@type": "Product",
       "name": "{{ page.title | escape }}",
-      "image": {{ page.images | jsonify }},
+      "image": [{% for img in page.images %}"https://cdn.csgad.com/kf/{{ img }}"{% if forloop.last == false %}, {% endif %}{% endfor %}],
       "description": "{{ description }}",
       "sku": "{{ page.encode }}",
       "offers": {
@@ -58,28 +58,33 @@
     }, {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-        "itemListElement": [{
+      "itemListElement": [
+        {
           "@type": "ListItem",
           "position": 1,
           "name": "{{ translations.home }}",
           "item": "{{ "/" | absolute_url }}"
-        },{
+        },
+        {
           "@type": "ListItem",
           "position": 2,
-          "name": "{{ page.categories[0] | escape }}",
-          "item": "{{ "/" | absolute_url }}"
-        },{
+          "name": "{{ page.categories[0].name | escape }}",
+          "item": "{{ "/category/" | append: page.categories[0].slug | append: "/" | absolute_url }}"
+        },
+        {
           "@type": "ListItem",
           "position": 3,
-          "name": "{{ page.categories[1] | escape }}",
-          "item": "{{ "/" | absolute_url }}}"
-        },{
+          "name": "{{ page.categories[1].name | escape }}",
+          "item": "{{ "/category/" | append: page.categories[1].slug | append: "/" | absolute_url }}"
+        },
+        {
           "@type": "ListItem",
           "position": 4,
           "name": "{{ page.title | escape }}",
           "item": "{{ page.url | absolute_url }}"
-        }]
-      }
+        }
+      ]
+    }
   ]
   </script>
 {% endif %}
