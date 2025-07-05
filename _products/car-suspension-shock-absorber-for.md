@@ -1,5 +1,3 @@
-Pastikan panjang artikel 500–600 kata.
-Judul juga tidak boleh ada backtick, slug, atau kode. Cukup string biasa.
 ---
 title: "Enhance Your Ride with Car Suspension Shock Absorber for 2005-12 Nissan Pathfinder Xterra"
 price: '180.09'
