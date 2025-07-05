@@ -1,0 +1,1 @@
+Harap sebutkan diskon 50% di penawaran (jika applicable)., Yang sesuai dengan harga_original dan price.
