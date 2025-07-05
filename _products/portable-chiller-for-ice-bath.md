@@ -1,6 +1,4 @@
 ---
-
-```yaml
 title: "Portable Chiller for Ice Bath Recovery: Compact 0.5HP Water Cooling System"
 price: '1652.00'
 price_original: '1652.00'
