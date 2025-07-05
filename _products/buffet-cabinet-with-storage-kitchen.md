@@ -1,0 +1,1 @@
+Tidak boleh mengulang struktur atau kriteria teknis dalam output
