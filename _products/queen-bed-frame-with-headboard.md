@@ -1,8 +1,4 @@
-Perhatikan stok produk: volume menunjukkan jumlah terjual/ulasan, sebutkan di artikel jika nilainya tinggi (>50) untuk membangun trust
-
 ---  
-  
-```yaml  
 title: "Queen Bed Frame with Upholstered Headboard – Elegant and Sturdy Design"  
 price: '179.12'  
 price_original: '381.10'  
