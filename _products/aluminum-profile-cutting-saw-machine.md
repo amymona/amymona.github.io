@@ -1,5 +1,4 @@
 ---
-
 title: Aluminum Profile Cutting Saw Machine – Precision Cutting for Windows and Doors
 price: '1758.18'
 price_original: '1758.18'
@@ -24,6 +23,7 @@ categories:
 slug: aluminum-profile-cutting-saw-machine
 encode: oDh6DaY
 lang: en
+---
 
 # Aluminum Profile Cutting Saw Machine – Precision Cutting for Windows and Doors
 
