@@ -2,7 +2,7 @@ url: https://amymona.github.io
 collections:
   products:
     output: true
-    permalink: /:slug
+    permalink: /:encode
 
 defaults:
   -
