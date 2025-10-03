@@ -1,19 +1,82 @@
-url: https://amymona.github.io
-collections:
-  products:
-    output: true
-    permalink: /:slug
+# Site Settings
+title: "Autogear Hub"
+description: "Honest car parts and accessories reviews from automotive experts"
+url: "https://amymona.github.io"
+baseurl: ""
+language: "en"
+timezone: Asia/Jakarta
 
+# Author
+author:
+  name: "Alex Rider"
+  bio: "Automotive Expert with 12+ years experience"
+  email: "contact@amymona.github.io"
+
+# Build Settings
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-archives
+
+# Pagination
+paginate: 8
+paginate_path: "/page:num/"
+
+# Archives (for categories & tags)
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+# Defaults
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
-      type: "products"
+      type: "posts"
     values:
-      layout: "default"
-  - 
-    scope:
+      layout: "post"
+      author: "Alex Rider"
+  - scope:
       path: ""
-      type: categories
+      type: "pages" 
     values:
-      layout: category
+      layout: "page"
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .git
+  - .gitignore
+
+# Custom Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Reviews"
+    url: "/reviews/"
+  - title: "Categories"
+    url: "/categories/"
+  - title: "About"
+    url: "/about/"
+  - title: "Contact"
+    url: "/contact/"
+
+footer_links:
+  - title: "Privacy Policy"
+    url: "/privacy-policy/"
+  - title: "Disclaimer" 
+    url: "/disclaimer/"
+  - title: "Terms of Service"
+    url: "/terms-of-service/"
