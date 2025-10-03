@@ -2,20 +2,18 @@
 layout: default
 ---
 
-<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-  {% for post in site.posts %}
-    <article class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-      <a href="{{ post.url }}">
-        <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h2 class="font-semibold text-lg mb-2 line-clamp-2">{{ post.title }}</h2>
-          <p class="text-gray-600 text-sm line-clamp-3">{{ post.description }}</p>
-          <div class="flex justify-between items-center mt-3 text-xs text-gray-500">
-            <span>{{ post.date | date: "%b %d, %Y" }}</span>
-            <span>{{ post.reading_time }}</span>
-          </div>
-        </div>
-      </a>
-    </article>
-  {% endfor %}
+<div class="text-center py-12">
+    <h1 class="text-4xl font-bold mb-4">Autogear Hub</h1>
+    <p class="text-xl text-gray-600">Articles Loaded: {{ site.articles.size }}</p>
+    
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+        {% for article in site.articles %}
+        <article class="bg-white rounded-lg border p-4">
+            <h2 class="font-semibold text-lg">{{ article.title }}</h2>
+            <p class="text-gray-600 text-sm">{{ article.date | date: "%b %d, %Y" }}</p>
+        </article>
+        {% else %}
+        <p class="col-span-3 text-gray-500">No articles yet</p>
+        {% endfor %}
+    </div>
 </div>
