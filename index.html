@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
     <article class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
       <a href="{{ post.url }}">
         <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
@@ -19,24 +19,3 @@ layout: default
     </article>
   {% endfor %}
 </div>
-
-<!-- Pagination -->
-{% if paginator.total_pages > 1 %}
-<div class="flex justify-center mt-8 space-x-2">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="px-4 py-2 border rounded hover:bg-gray-50">Previous</a>
-  {% endif %}
-  
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <span class="px-4 py-2 border bg-primary text-white rounded">{{ page }}</span>
-    {% else %}
-      <a href="{% if page == 1 %}/{% else %}/page{{ page }}/{% endif %}" class="px-4 py-2 border rounded hover:bg-gray-50">{{ page }}</a>
-    {% endif %}
-  {% endfor %}
-  
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="px-4 py-2 border rounded hover:bg-gray-50">Next</a>
-  {% endif %}
-</div>
-{% endif %}
