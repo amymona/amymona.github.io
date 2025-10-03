@@ -62,6 +62,9 @@ defaults:
     values:
       layout: "page"
 
+include:
+  - _pages/*.html
+
 # Exclude
 exclude:
   - Gemfile
