@@ -8,9 +8,7 @@
   
   <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
     {% for page in site.pages %}
-      {% if page.layout == "page" and page.title != "About the Author" %}
-        <a href="{{ page.url }}" class="hover:text-primary">{{ page.title }}</a>
-      {% endif %}
+      <a href="{{ page.url }}" class="hover:text-primary">{{ page.title }}</a>
     {% endfor %}
   </div>
 </footer>
