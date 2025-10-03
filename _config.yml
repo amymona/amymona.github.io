@@ -43,6 +43,9 @@ collections:
   articles:
     output: true
     permalink: /:name
+  pages:
+    output: true
+    permalink: /:name/
 
 defaults:
   - scope:
@@ -51,20 +54,10 @@ defaults:
     values:
       layout: "post"
   - scope:
-      path: "_posts"
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Alex Rider"
-  - scope:
       path: "_pages"
       type: "pages" 
     values:
       layout: "page"
-      permalink: /:name/
-
-include:
-  - _pages
 
 # Exclude
 exclude:
