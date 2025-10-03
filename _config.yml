@@ -61,9 +61,10 @@ defaults:
       type: "pages" 
     values:
       layout: "page"
+      permalink: /:name/
 
 include:
-  - _pages/*.html
+  - _pages
 
 # Exclude
 exclude:
