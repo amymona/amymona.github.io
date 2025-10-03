@@ -39,15 +39,25 @@ jekyll-archives:
     tag: /tags/:name/
 
 # Defaults
+collections:
+  articles:
+    output: true
+    permalink: /:name/
+
 defaults:
   - scope:
-      path: ""
+      path: "_articles"
+      type: "articles" 
+    values:
+      layout: "post"
+  - scope:
+      path: "_posts"
       type: "posts"
     values:
       layout: "post"
       author: "Alex Rider"
   - scope:
-      path: ""
+      path: "_pages"
       type: "pages" 
     values:
       layout: "page"
