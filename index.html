@@ -5,15 +5,30 @@ layout: default
 {% if site.articles.size > 0 %}
 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     {% for article in site.articles %}
-    <article class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-        <a href="{{ article.url }}">
+    <article class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
+        <a href="{{ article.url }}" class="block h-full">
             {% if article.featured_image %}
-            <img src="{{ article.featured_image }}" alt="{{ article.title }}" class="w-full h-48 object-cover">
+            <img src="{{ article.featured_image }}" alt="{{ article.title }}" 
+                 class="w-full h-48 object-cover">
+            {% else %}
+            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+                <span class="text-gray-500">No Image</span>
+            </div>
             {% endif %}
-            <div class="p-4">
-                <h2 class="font-semibold text-lg mb-2">{{ article.title }}</h2>
-                <p class="text-gray-600 text-sm">{{ article.description }}</p>
-                <div class="flex justify-between items-center mt-3 text-xs text-gray-500">
+            
+            <div class="p-4 flex flex-col h-48">
+                <!-- Judul dengan line-clamp -->
+                <h2 class="font-semibold text-lg mb-2 line-clamp-2 leading-tight">
+                    {{ article.title }}
+                </h2>
+                
+                <!-- Deskripsi dengan line-clamp -->
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                    {{ article.description }}
+                </p>
+                
+                <!-- Meta info -->
+                <div class="flex justify-between items-center text-xs text-gray-500 mt-auto">
                     <span>{{ article.date | date: "%b %d, %Y" }}</span>
                     <span>{{ article.reading_time }}</span>
                 </div>
@@ -21,5 +36,13 @@ layout: default
         </a>
     </article>
     {% endfor %}
+</div>
+{% else %}
+<!-- Empty State -->
+<div class="text-center py-16">
+    <div class="bg-gray-100 rounded-lg p-8 max-w-md mx-auto">
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">No Articles Yet</h3>
+        <p class="text-gray-500">Check back soon for new content!</p>
+    </div>
 </div>
 {% endif %}
