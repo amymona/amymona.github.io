@@ -1,0 +1,66 @@
+---
+layout: compress
+published: true
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+</head>
+<body>
+    {% include header.html %}
+    
+    <main class="mx-auto min-h-[90vh] max-w-4xl py-6 px-4 flex flex-col gap-y-4">
+        <!-- Article Header -->
+        <article class="prose max-w-none">
+            <header class="mb-8">
+                <h1 class="text-4xl font-bold mb-4">{{ page.title }}</h1>
+                
+                <!-- Meta Info -->
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                    <span>{{ page.date | date: "%B %d, %Y" }}</span>
+                    <span>{{ page.reading_time }}</span>
+                </div>
+
+                <!-- Categories & Tags -->
+                <div class="flex flex-wrap gap-2 mb-6">
+                    {% for category in page.categories %}
+                    <a href="/categories/{{ category | slugify }}/" 
+                       class="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full text-sm transition-colors">
+                        {{ category }}
+                    </a>
+                    {% endfor %}
+                    
+                    {% for tag in page.tags %}
+                    <a href="/tags/{{ tag | slugify }}/" 
+                       class="bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded-full text-sm transition-colors">
+                        {{ tag }}
+                    </a>
+                    {% endfor %}
+                </div>
+
+                <!-- Featured Image -->
+                {% if page.featured_image %}
+                <img src="{{ page.featured_image }}" alt="{{ page.title }}" 
+                     class="w-full h-64 object-cover rounded-lg shadow-md mb-6">
+                {% endif %}
+            </header>
+
+            <!-- Article Content -->
+            <div class="post-content">
+                {{ content }}
+            </div>
+
+            <!-- Schema Markup -->
+            {% if page.schema %}
+            <script type="application/ld+json">
+            {{ page.schema }}
+            </script>
+            {% endif %}
+        </article>
+    </main>
+    
+    {% include footer.html %}
+</body>
+</html>
