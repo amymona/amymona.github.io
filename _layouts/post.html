@@ -23,23 +23,6 @@ published: true
                 <span>{{ page.reading_time }}</span>
             </div>
 
-            <!-- Categories & Tags -->
-            <div class="flex flex-wrap gap-2">
-                {% for category in page.categories %}
-                <a href="/categories/{{ category | slugify }}/" 
-                   class="bg-slate-100 hover:bg-gray-200 px-3 py-1 rounded-full text-sm transition-colors">
-                    {{ category }}
-                </a>
-                {% endfor %}
-                
-                {% for tag in page.tags %}
-                <a href="/tags/{{ tag | slugify }}/" 
-                   class="bg-slate-100 hover:bg-gray-200 px-3 py-1 rounded-full text-sm transition-colors">
-                    {{ tag }}
-                </a>
-                {% endfor %}
-            </div>
-
             <!-- Affiliate Disclosure -->
             <div class="bg-slate-100 rounded-lg p-4">
                 <p class="text-slate-700 text-sm">
@@ -50,6 +33,23 @@ published: true
 
         <!-- Article Content -->
         {{ content }}
+
+        <!-- Categories & Tags -->
+        <div class="flex flex-wrap gap-2 mt-8">
+            {% for category in page.categories %}
+            <a href="/categories/{{ category | slugify }}/" 
+               class="bg-slate-100 hover:bg-gray-200 px-3 py-1 rounded-full text-sm transition-colors">
+                {{ category }}
+            </a>
+            {% endfor %}
+            
+            {% for tag in page.tags %}
+            <a href="/tags/{{ tag | slugify }}/" 
+               class="bg-slate-100 hover:bg-gray-200 px-3 py-1 rounded-full text-sm transition-colors">
+                {{ tag }}
+            </a>
+            {% endfor %}
+        </div>
 
         <!-- Schema Markup -->
         {% if page.schema %}
