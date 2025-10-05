@@ -11,7 +11,7 @@ published: true
 <body>
     {% include header.html %}
     
-    <main class="mx-auto min-h-[90vh] max-w-4xl py-6 px-4 flex flex-col gap-y-4">
+    <main class="mx-auto min-h-[85vh] max-w-4xl py-6 px-4 flex flex-col gap-y-4">
         <!-- Article Header -->
         <header class="flex flex-col gap-4">
             <h1 class="text-4xl font-bold">{{ page.title }}</h1>
@@ -43,7 +43,7 @@ published: true
             <!-- Affiliate Disclosure -->
             <div class="bg-slate-100 border border-slate-300 rounded-lg p-4">
                 <p class="text-slate-700 text-sm">
-                    <strong>Disclosure:</strong> This article contains affiliate links. If you make a purchase through these links, I may earn a commission at no additional cost to you. I only recommend products I believe in.
+                    <strong>Disclosure:</strong> {{ site.disclosure }}
                 </p>
             </div>
         </header>
