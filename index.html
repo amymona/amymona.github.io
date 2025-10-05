@@ -4,7 +4,7 @@ layout: default
 
 {% if site.articles.size > 0 %}
 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {% for article in site.articles %}
+    {% for article in site.articles reverse %}
     <article class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
         <a href="{{ article.url }}" class="block h-full">
             {% if article.featured_image %}
@@ -16,18 +16,13 @@ layout: default
             </div>
             {% endif %}
             
-            <div class="p-4 flex flex-col h-48">
-                <!-- Judul dengan line-clamp -->
-                <h2 class="font-semibold text-lg mb-2 line-clamp-2 leading-tight">
+            <div class="p-4 flex flex-col gap-y-2">
+                <h2 class="font-semibold text-lg line-clamp-2 leading-tight">
                     {{ article.title }}
                 </h2>
-                
-                <!-- Deskripsi dengan line-clamp -->
-                <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                <p class="text-gray-600 text-sm line-clamp-3 flex-grow">
                     {{ article.description }}
                 </p>
-                
-                <!-- Meta info -->
                 <div class="flex justify-between items-center text-xs text-gray-500 mt-auto">
                     <span>{{ article.date | date: "%b %d, %Y" }}</span>
                     <span>{{ article.reading_time }}</span>
