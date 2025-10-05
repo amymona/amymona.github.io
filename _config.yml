@@ -67,23 +67,13 @@ exclude:
   - .git
   - .gitignore
 
-# Custom Navigation
-navigation:
-  - title: "Home"
-    url: "/"
-  - title: "Reviews"
-    url: "/reviews/"
-  - title: "Categories"
-    url: "/categories/"
-  - title: "About"
-    url: "/about/"
-  - title: "Contact"
-    url: "/contact/"
-
-footer_links:
-  - title: "Privacy Policy"
-    url: "/privacy-policy/"
-  - title: "Disclaimer" 
-    url: "/disclaimer/"
-  - title: "Terms of Service"
-    url: "/terms-of-service/"
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
