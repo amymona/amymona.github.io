@@ -2,12 +2,6 @@
 layout: default
 ---
 
-<div class="text-center py-12">
-    <h1 class="text-4xl font-bold mb-4">Autogear Hub</h1>
-    <p class="text-xl text-gray-600">Testing Articles Collection</p>
-    <p class="text-gray-500">Articles count: {{ site.articles.size }}</p>
-</div>
-
 {% if site.articles.size > 0 %}
 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     {% for article in site.articles %}
