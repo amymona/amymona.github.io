@@ -1,14 +1,11 @@
 ---
 layout: default
-pagination:
-  enabled: true
-  collection: articles
-  per_page: 12
 ---
 
-{% if paginator.posts.size > 0 %}
+{% if site.articles.size > 0 %}
+{% assign sorted_articles = site.articles | sort: "date" | reverse %}
 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {% for article in paginator.posts %}
+    {% for article in sorted_articles %}
     <article class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
         <a href="{{ article.url }}" class="block h-full">
             {% if article.featured_image %}
@@ -59,14 +56,6 @@ pagination:
 {% endif %}
 
 {% else %}
-<!-- Debug info -->
-<div class="bg-yellow-100 p-6 rounded-lg">
-    <h3 class="text-lg font-semibold mb-2">Debug Information:</h3>
-    <p>Total articles in site: {{ site.articles.size }}</p>
-    <p>Paginator posts count: {{ paginator.posts.size }}</p>
-    <p>First article title: {{ site.articles.first.title }}</p>
-</div>
-
 <!-- Empty State -->
 <div class="text-center py-16">
     <div class="bg-gray-100 rounded-lg p-8 max-w-md mx-auto">
