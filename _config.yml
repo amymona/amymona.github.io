@@ -1,7 +1,7 @@
 # Site Settings
-title: "Autogear Hub"
+title: "Vehicle Tech Lab"
 description: "Honest car parts and accessories reviews from automotive experts"
-url: "https://amymona.github.io"
+url: "https://vehicletechlab.github.io"
 baseurl: ""
 language: "en"
 timezone: Asia/Jakarta
@@ -10,7 +10,7 @@ timezone: Asia/Jakarta
 author:
   name: "Alex Rider"
   bio: "Automotive Expert with 12+ years experience"
-  email: "contact@amymona.github.io"
+  email: "contact@vehicletechlab.github.io"
 
 disclosure: "This article contains affiliate links. If you make a purchase through these links, I may earn a commission at no additional cost to you. I only recommend products I believe in."
 
@@ -19,7 +19,6 @@ markdown: kramdown
 permalink: pretty
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-archives
