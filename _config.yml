@@ -25,7 +25,7 @@ plugins:
   - jekyll-archives
 
 # Pagination
-paginate: 8
+paginate: 12
 paginate_path: "/page:num/"
 
 # Archives (for categories & tags)

@@ -32,6 +32,28 @@ layout: default
     </article>
     {% endfor %}
 </div>
+
+<!-- Pagination -->
+{% if paginator.total_pages > 1 %}
+<div class="flex justify-center items-center gap-4 mt-12">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+        Previous
+    </a>
+    {% endif %}
+    
+    <span class="text-gray-600">
+        Page {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+    
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+        Next
+    </a>
+    {% endif %}
+</div>
+{% endif %}
+
 {% else %}
 <!-- Empty State -->
 <div class="text-center py-16">
