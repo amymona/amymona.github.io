@@ -43,7 +43,8 @@ jekyll-archives:
 collections:
   articles:
     output: true
-    permalink: /:name
+    permalink: /articles/:title/
+    sort_by: date
   pages:
     output: true
     permalink: /:name/
@@ -54,6 +55,7 @@ defaults:
       type: "articles" 
     values:
       layout: "post"
+      published: true
   - scope:
       path: "_pages"
       type: "pages" 
